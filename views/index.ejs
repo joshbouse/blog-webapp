@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+<body>
+    <div class="post-bar">
+        <h1 id="posts">Posts</h1>
+        <a href="/compose" class="btn post-button">Compose</a>
+    </div>
+    <div class="postView-container">
+        <%if(locals.Posts.length > 0){ for (let index = 0; index < Posts.length; index++) {%>
+            <%const Post = Posts[index];%>
+            <div class="post-view">
+            <a href="/confirm?Post=<%=index%>" class="edit-button">Delete</a>
+            <% if(locals.deleteIndex == index){ %>
+            <a href="/" class="confirm">Keep</a>
+            <span class="confirm">/</span>
+            <a href="delete?Post=<%=index%>" class="confirm">Delete</a>
+            <span class="confirm attention">Delete Post?</span>
+            <%}%>
+            <a href="edit?Post=<%=index%>" class="edit-button">Edit</a>
+            <h2 class="post-content post-title"><%=Post.postTitle %></h3>
+            <p class="post-content"><%= Post.postContent %></p>
+            </div>
+        <%}}else{;%>
+            <div class="post-view">
+            <p class="post-content">Click the compose button to create your first post!</p>
+            </div>
+        <% } %>
+    </div>
+</body>
+
+<%- include("partials/footer.ejs") %>

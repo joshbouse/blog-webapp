@@ -1,0 +1,13 @@
+<%- include("partials/header.ejs") %>
+<body>
+    <div class="postCreate-container">
+        <h1 id="post-message">Write your post below</h1>
+        <form id="post-form" class="form-group" action="/submit" method="post">
+            <input type="text" type="text" placeholder="Title" name="title" class="form-group text-box" required>
+            <textarea name = "content" placeholder="What's on your mind?" class="form-group text-box" id="post-box" required></textarea>
+            <input class="btn post-button" type="submit">
+        </form>
+    </div>
+</body>
+
+<%- include("partials/footer.ejs") %>
