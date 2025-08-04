@@ -1,13 +1,15 @@
 <%- include("partials/header.ejs") %>
-<body>
-    <div class="postCreate-container">
-        <h1 id="post-message">Edit your post</h1>
-        <form id="post-form" class="form-group" action="/return?Post=<%=Posts.indexOf(Post)%>" method="post">
-            <input type="text" type="text" value=<%= Post.postTitle %> name="title" class="form-group text-box" required>
-            <textarea name = "content" class="form-group text-box" id="post-box" required><%= Post.postContent %></textarea>
-            <input class="btn post-button" type="submit">
-        </form>
-    </div>
-</body>
 
-<%- include("partials/footer.ejs") %>
+    <body>
+        <div class="postCreate-container">
+            <h1 id="post-message">Edit your post</h1>
+            <form id="post-form" class="form-group" action="/return?Post=<%=Post.id%>" method="post">
+                <input type="text" type="text" value=<%=Post.title %> name="title" class="form-group text-box"
+                required>
+                <textarea name="content" class="form-group text-box" id="post-box" required><%= Post.post %></textarea>
+                <input class="btn post-button" type="submit">
+            </form>
+        </div>
+    </body>
+
+    <%- include("partials/footer.ejs") %>
