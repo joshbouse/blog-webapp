@@ -17,6 +17,6 @@ create table posts(
 
 Screenshots:
 
-![Alt text](\Screenshots\account.png)
+![Sign-in page](/Screenshots/account.png)
 
-![Alt text](\Screenshots\blog.png)
+![Blog page](/Screenshots/blog.png)
